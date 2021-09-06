@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  color: var(--text-gray);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --button-shadow: inset 0.2rem 0.2rem 1rem #c8d0e7,
+    inset -0.2rem -0.2rem 1rem #ffffff;
+  --box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
+    inset -0.2rem -0.2rem 0.5rem #ffffff;
+  --button-white: rgb(230, 230, 230);
+  --text-gray: #757a80;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    rgba(167, 112, 239, 0.5) 0%,
+    rgba(207, 139, 243, 0.5) 70%,
+    rgba(253, 185, 155, 0.3) 100%
+  );
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+button {
+  outline: none;
+  border: 0;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.navbar {
+  padding: 1em;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  color: rgba(34, 34, 34);
+  margin-right: 0.5em;
+}
+
+.navbar-count {
+  display: inline-block;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-left: 0.2em;
+  background-color: rgb(223, 183, 255);
   color: white;
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.habits {
+  width: 320px;
+  padding-top: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add--form {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add--input {
+  color: var(--text-gray);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  margin-right: 0.2em;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  border-style: none;
+  border-radius: 0.2rem;
+}
+
+.add--button {
+  height: 100%;
+  padding: 0.5em;
+  font-size: 1.2rem;
+  background-color: var(--button-white);
+  box-shadow: var(--button-shadow);
+}
+
+ul {
+  margin: 0;
+  padding: 1rem;
+  height: 50vh;
+  border-radius: 1rem;
+  overflow: scroll;
+  background-color: rgb(245, 245, 245);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.habit {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.habit--items__count {
+  display: inline-block;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: 0.3em;
+  margin-right: 0.5em;
+  background-color: rgb(191, 112, 255);
+  color: white;
+  border-radius: 50%;
+}
+
+.habit--buttons__button {
+  margin: 0 0.005em;
+  font-size: 1.8rem;
+  background-color: transparent;
+}
+
+.habit--buttons__button:hover {
+  opacity: 0.8;
+}
+
+.habit--increase,
+.habit--decrease {
+  color: rgb(48, 47, 47);
+}
+
+.habit--delete {
+  color: rgb(177, 82, 255);
+}
+
+.reset--button {
+  padding: 0.2em 1em;
+  margin-top: 1.5em;
+  font-size: 1.2rem;
+  background-color: var(--button-white);
+  box-shadow: var(--button-shadow);
 }
