@@ -9,9 +9,9 @@ const SimipleHabit = (props) => {
 
     return (
         <li className="habit">
-            <span className="habit-name">Reading</span>
-            <span className="habit-count">{count}</span>
-            <button className="habit-button habit-increase" onClick={handleIncrement}>
+            <span className="habit__name">Reading</span>
+            <span className="habit__count">{count}</span>
+            <button className="habit__button habit--increase" onClick={handleIncrement}>
                 <i className="fas fa-plus-square"></i>
             </button>
         </li>

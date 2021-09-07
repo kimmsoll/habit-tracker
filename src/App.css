@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
-  color: var(--text-gray);
+  font-family: 'Montserrat', sans-serif;
 }
 
 :root {
-  --button-shadow: inset 0.2rem 0.2rem 1rem #c8d0e7,
-    inset -0.2rem -0.2rem 1rem #ffffff;
-  --box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
-    inset -0.2rem -0.2rem 0.5rem #ffffff;
-  --button-white: rgb(230, 230, 230);
-  --text-gray: #757a80;
+  --background-gray: #edf2f0;
+  --text-gray: #a0a5a8;
+  --shadow-gray: #d1d9e6;
+  --black: #181818;
+  --white: #f9f9f9;
+  --blue: #4b70e2;
+  --dark-blue: #2d59db;
+  --box-shadow: 0.2rem 0.2rem 0.2rem var(--shadow-gray),
+    -0.2rem -0.2rem 0.2rem var(--white);
 }
 
 body {
@@ -17,86 +22,92 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    rgba(167, 112, 239, 0.5) 0%,
-    rgba(207, 139, 243, 0.5) 70%,
-    rgba(253, 185, 155, 0.3) 100%
-  );
+  background-color: var(--background-gray);
 }
 
 #root {
+  margin-top: 2rem;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
-  font-size: 2rem;
 }
 
 button {
-  outline: none;
   border: 0;
   border-radius: 0.2em;
+  outline: none;
+  color: var(--white);
+  background-color: var(--blue);
   cursor: pointer;
 }
 
 .navbar {
-  padding: 1em;
-  background-color: white;
-  box-shadow: var(--box-shadow);
+  padding: 0.8em;
   border-radius: 0.5em;
+  box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.navbar-logo {
-  color: rgba(34, 34, 34);
+.navbar > span {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 700;
+}
+
+.navbar__logo {
+  color: var(--black);
   margin-right: 0.5em;
 }
 
-.navbar-count {
+.navbar__count {
   display: inline-block;
   text-align: center;
   width: 2.5rem;
   height: 2.5rem;
   line-height: 2.5rem;
-  margin-left: 0.2em;
-  background-color: rgb(223, 183, 255);
-  color: white;
+  margin-left: 0.3em;
   border-radius: 50%;
+  background-color: var(--black);
+  color: white;
 }
 
 .habits {
-  width: 320px;
+  width: 70vw;
+  margin: 0;
   padding-top: 1em;
 }
 
 .add--form {
   margin-bottom: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .add--input {
-  color: var(--text-gray);
-  background-color: white;
-  box-shadow: var(--box-shadow);
   width: 90%;
-  margin-right: 0.2em;
+  margin-right: 0.5em;
   padding: 0.5rem;
-  font-size: 1.3rem;
-  border-style: none;
+  font-size: 1.2rem;
   border-radius: 0.2rem;
+  border-style: none;
+  background-color: transparent;
+  box-shadow: var(--box-shadow);
+}
+
+.add--input::placeholder {
+  color: var(--text-gray);
 }
 
 .add--button {
   height: 100%;
   padding: 0.5em;
+  margin: 0;
   font-size: 1.2rem;
-  background-color: var(--button-white);
-  box-shadow: var(--button-shadow);
+  box-shadow: 8rem 8rem 16rem var(--shadow-gray) -8rem -8rem 16rem var(--white);
 }
 
 ul {
@@ -105,7 +116,6 @@ ul {
   height: 50vh;
   border-radius: 1rem;
   overflow: scroll;
-  background-color: rgb(245, 245, 245);
   box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
@@ -113,7 +123,7 @@ ul {
 
 .habit {
   padding-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   list-style: none;
   display: flex;
   align-items: center;
@@ -123,19 +133,19 @@ ul {
 .habit--items__count {
   display: inline-block;
   text-align: center;
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.8em;
   margin-left: 0.3em;
   margin-right: 0.5em;
-  background-color: rgb(191, 112, 255);
-  color: white;
   border-radius: 50%;
+  color: white;
+  background-color: var(--black);
 }
 
 .habit--buttons__button {
   margin: 0 0.005em;
-  font-size: 1.8rem;
+  font-size: 1.2em;
   background-color: transparent;
 }
 
@@ -149,13 +159,12 @@ ul {
 }
 
 .habit--delete {
-  color: rgb(177, 82, 255);
+  color: var(--dark-blue);
 }
 
 .reset--button {
   padding: 0.2em 1em;
   margin-top: 1.5em;
   font-size: 1.2rem;
-  background-color: var(--button-white);
-  box-shadow: var(--button-shadow);
+  box-shadow: 8rem 8rem 16rem var(--shadow-gray) -8rem -8rem 16rem var(--white);
 }
